@@ -70,4 +70,12 @@ function BP_CharacterBase_C:ChangeToRagdoll()
 	self.Mesh:SetSimulatePhysics(true)
 end
 
+local yasio_update = require 'example'
+local yasio_test_done = false
+function BP_CharacterBase_C:ReceiveTick(dt)
+	if not yasio_test_done then
+        yasio_test_done = yasio_update(dt)
+    end
+end
+
 return BP_CharacterBase_C

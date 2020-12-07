@@ -28,6 +28,8 @@
 #include "ReflectionUtils/ReflectionRegistry.h"
 #include "Interfaces/IPluginManager.h"
 
+#include "yasio_uelua.h"
+
 #if WITH_EDITOR
 #include "Editor.h"
 #include "GameDelegates.h"
@@ -245,6 +247,10 @@ void FLuaContext::CreateState()
         {
             Enum->Register(L);
         }
+
+        // register yasio lua module to ue4, then you can use yasio as follow
+        // local yasio = require 'yasio'
+        yasio_uelua_init(L);
 
         FUnLuaDelegates::OnLuaStateCreated.Broadcast(L);
     }
