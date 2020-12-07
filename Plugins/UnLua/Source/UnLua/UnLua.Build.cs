@@ -46,6 +46,7 @@ public class UnLua : ModuleRules
         PrivateDependencyModuleNames.AddRange(
             new string[]
             {
+                "OpenSSL",
                 "Core",
                 "CoreUObject",
                 "Engine",

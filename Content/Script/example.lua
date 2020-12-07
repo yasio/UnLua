@@ -86,7 +86,7 @@ client:start(function(event)
             stopFlag = stopFlag + 1
             -- test buffer out_of_range exception handler
             local _, result = pcall(ibs.read_i8, ibs)
-            print(result)
+            print('yasio - ' .. result)
         elseif(t == yasio.YEK_CONNECT_RESPONSE) then -- connect responseType
             if(event:status() == 0) then
                 print("yasio - connect server succeed.")
