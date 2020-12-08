@@ -1072,6 +1072,7 @@ void FLuaContext::Cleanup(bool bFullCleanup, UWorld *World)
 
         if (bFullCleanup)
         {
+            yasio_uelua_cleanup();
             lua_close(L);
             L = nullptr;
 
