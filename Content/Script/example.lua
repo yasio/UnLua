@@ -103,7 +103,7 @@ client:start(function(event)
 
 -- httpclient 
 local http_client = require 'http_client'
-http_client:sendHttpGetRequest('http://tool.chinaz.com/', function(respData)
+http_client:sendHttpGetRequest('https://tool.chinaz.com/', function(respData)
     print(string.format('yasio - http request done, %d bytes transferred\n', #respData))
     print(respData)
     stopFlag = stopFlag + 1
